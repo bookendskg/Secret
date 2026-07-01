@@ -9,21 +9,57 @@
 
   var showLocal = section.getAttribute("data-show-local") === "true";
   var localSrc = section.getAttribute("data-local-src") || "videos/message.mp4";
+  var loop = section.getAttribute("data-loop") === "true";
   var ytId = (section.getAttribute("data-youtube-id") || "").trim();
 
   var added = false;
 
   // 1. Local video file
   if (showLocal) {
+    var wrap = document.createElement("div");
+    wrap.className = "video-local";
+
     var video = document.createElement("video");
     video.setAttribute("controls", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("preload", "metadata");
+    if (loop) {
+      // Autoplay requires the video to start muted; the button below unmutes.
+      video.loop = true;
+      video.autoplay = true;
+      video.muted = true;
+      video.setAttribute("loop", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("muted", "");
+    }
     var source = document.createElement("source");
     source.src = localSrc;
     source.type = "video/mp4";
     video.appendChild(source);
-    container.appendChild(video);
+    wrap.appendChild(video);
+
+    // Mute / unmute button
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mute-btn";
+    var syncBtn = function () {
+      var m = video.muted || video.volume === 0;
+      btn.textContent = m ? "🔇 Unmute" : "🔊 Mute";
+      btn.setAttribute("aria-label", m ? "Unmute video" : "Mute video");
+      btn.setAttribute("aria-pressed", String(m));
+    };
+    btn.addEventListener("click", function () {
+      video.muted = !video.muted;
+      if (!video.muted) {
+        video.play().catch(function () {});
+      }
+      syncBtn();
+    });
+    video.addEventListener("volumechange", syncBtn);
+    syncBtn();
+    wrap.appendChild(btn);
+
+    container.appendChild(wrap);
     added = true;
   }
 
