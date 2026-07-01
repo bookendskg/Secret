@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Capiche — Menu</title>
+  <meta name="description" content="Pizza Capiche menu — appetizers, pasta, wood-fired pizza, drinks & desserts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">@pizza.capiche</p>
+      <h1>Pizza Capiche</h1>
+      <p class="tagline">Wood-fired pizza, fresh pasta &amp; sweet things.</p>
+    </div>
+  </header>
+
+  <!-- ============ VIDEO MESSAGE ============ -->
+  <!-- This section supports BOTH a local video file and a YouTube video.
+       Each is optional and independent:
+         1. Local file  -> set  data-show-local="true"  and drop your file at  videos/message.mp4
+         2. YouTube      -> set  data-youtube-id="XXXXXXXXXXX"  to the video's ID
+       Leave a value empty / false to hide that player. -->
+  <section id="video"
+           class="video-section"
+           data-show-local="false"
+           data-local-src="videos/message.mp4"
+           data-youtube-id="">
+    <div class="section-head">
+      <h2>A Message For You</h2>
+    </div>
+    <div id="video-container" class="video-container">
+      <!-- Players are injected by script.js based on the settings above -->
+    </div>
+    <p id="video-fallback" class="video-fallback" hidden>
+      Add a video message: set <code>data-show-local="true"</code> (with a file at
+      <code>videos/message.mp4</code>) and/or set <code>data-youtube-id</code> on the
+      <code>#video</code> section in <code>index.html</code>.
+    </p>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <main class="menu">
+
+    <section class="menu-section">
+      <h2 class="cat">Appetizers</h2>
+      <div class="items">
+        <article class="item">
+          <div class="item-head">
+            <h3>Parmesan Truffle Fries <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span></span></h3>
+            <span class="price">540</span>
+          </div>
+          <p class="desc">Parmesan truffle fries, garlic ranch</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2 class="cat">Pasta</h2>
+      <div class="items">
+        <article class="item">
+          <div class="item-head">
+            <h3>Baked Spicy Tomato &amp; Cream <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price">780</span>
+          </div>
+          <p class="desc">Pomodoro sauce, buffalo mozzarella, parmesan, basil</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Limon Pasta <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span></span></h3>
+            <span class="price">740</span>
+          </div>
+          <p class="desc">Lemon butter sauce, spaghetti, garlic, herbs</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Cacio e Pepe <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price">840</span>
+          </div>
+          <p class="desc">Black pepper parm sauce, spaghetti, truffle oil, truffle paste</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Mushroom Risotto <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price">780</span>
+          </div>
+          <p class="desc">Mushroom duxelle, roasted mushrooms, parmesan, arborio rice, herbs</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2 class="cat">Pizza</h2>
+      <div class="size-legend"><span>11"</span><span>15"</span></div>
+      <div class="items">
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Cheese Chilligarlic <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price"><span>940</span><span>1240</span></span>
+          </div>
+          <p class="desc">Bechamel, mozz, cheddar, parm, chilli, confit garlic, green garlic, oregano</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Tokyo Margherita</h3>
+            <span class="price"><span>1140</span><span>1440</span></span>
+          </div>
+          <p class="desc">Pomodoro, smoked mozz, gochugaru, parm, cheddar cheese, basil</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Deadpool</h3>
+            <span class="price"><span>940</span><span>1240</span></span>
+          </div>
+          <p class="desc">Pomodoro, mozz, pineapple jam, jalapeno, kalamata olives, onion</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Upside Down</h3>
+            <span class="price"><span>1140</span><span>1440</span></span>
+          </div>
+          <p class="desc">Bechamel, mozz, parm, pomodoro, basil</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Truffle Fun-Guy <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price"><span>1140</span><span>1440</span></span>
+          </div>
+          <p class="desc">Mushroom crema, mozz, parm, roasted mushrooms, pesto, chilli crisp, truffle</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Fiyah Fiyah <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price"><span>940</span><span>1240</span></span>
+          </div>
+          <p class="desc">Pomodoro, mozz, ghost pepper, chillies</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Cupid <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price"><span>940</span><span>1240</span></span>
+          </div>
+          <p class="desc">Spicy tomato crema, pesto, beetroot crema, mozz, parmesan</p>
+        </article>
+        <article class="item pizza">
+          <div class="item-head">
+            <h3>Rubirosa <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price"><span>940</span><span>1240</span></span>
+          </div>
+          <p class="desc">Spicy tomato crema, pomodoro, fresh mozz, spicy pesto</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2 class="cat">Drinks &amp; Desserts</h2>
+      <div class="items">
+        <article class="item">
+          <div class="item-head">
+            <h3>Cookies &amp; Cream Milkshake <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span></span></h3>
+            <span class="price">490</span>
+          </div>
+          <p class="desc">Pomodoro sauce, buffalo mozzarella, parmesan, basil</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Nutella Milkshake <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span></span></h3>
+            <span class="price">490</span>
+          </div>
+          <p class="desc">Nutella, milk, whipped cream</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Picante</h3>
+            <span class="price">360</span>
+          </div>
+          <p class="desc">Jalapeno pickle juice, lemon, syrup, coriander</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Cinnamon Sugar Dough Balls <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span></span></h3>
+            <span class="price">690</span>
+          </div>
+          <p class="desc">Dough balls, cinnamon sugar, lemon mascarpone dip</p>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3>Nutella Ring <span class="tags"><span class="tag veg" title="Vegetarian">🌱</span><span class="tag hot" title="Spicy">🌶</span></span></h3>
+            <span class="price">940</span>
+          </div>
+          <p class="desc">Nutella, ricotta, hazelnuts, pizza dough, vanilla ice cream</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="legend">
+      <span><span class="tag veg">🌱</span> Vegetarian</span>
+      <span><span class="tag hot">🌶</span> Spicy</span>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Pizza Capiche · <a href="https://instagram.com/pizza.capiche" target="_blank" rel="noopener">@pizza.capiche</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
