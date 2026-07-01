@@ -22,6 +22,119 @@ body {
 
 h1, h2, h3, .cat, .price { font-family: "Oswald", "Inter", sans-serif; }
 
+/* ---------- Secret-menu intro ---------- */
+body.intro-lock { overflow: hidden; }
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  transition: opacity .5s ease;
+}
+.intro.intro-hide { opacity: 0; pointer-events: none; }
+
+.intro-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.intro-screen[hidden] { display: none; }
+
+/* Screen 1 — stamp */
+.intro-stamp { background: #fff; }
+.stamp {
+  position: relative;
+  border: 6px solid var(--red);
+  border-radius: 18px;
+  padding: 2.4rem 3.4rem 1.6rem;
+  text-align: center;
+  transform: rotate(-4deg);
+  animation: stamp-in .45s cubic-bezier(.2, 1.2, .3, 1) both;
+}
+.stamp::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 3px solid var(--red);
+  border-radius: 12px;
+  pointer-events: none;
+}
+.stamp-title {
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(2.2rem, 11vw, 4.5rem);
+  line-height: 1;
+}
+.stamp-sub {
+  display: block;
+  font-family: "Satisfy", cursive;
+  color: var(--red);
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  margin-top: .5rem;
+}
+@keyframes stamp-in {
+  0%   { opacity: 0; transform: rotate(-4deg) scale(1.6); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: rotate(-4deg) scale(1); }
+}
+
+/* Screen 2 — message */
+.intro-message {
+  background: var(--red);
+  color: #fff;
+  overflow-y: auto;
+}
+.message-card {
+  max-width: 620px;
+  text-align: center;
+  animation: fade-up .5s ease both;
+}
+.message-card .lead {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  margin: 0 0 1.25rem;
+}
+.message-card p {
+  font-size: clamp(.95rem, 2.6vw, 1.1rem);
+  line-height: 1.7;
+  margin: 0 0 1.1rem;
+}
+.message-card .handle {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .08em;
+  margin: 1.5rem 0 2rem;
+  opacity: .95;
+}
+.access-btn {
+  border: 0;
+  background: #fff;
+  color: var(--red);
+  font: 700 1rem/1 "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.access-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0, 0, 0, .3); }
+.access-btn:active { transform: translateY(0); }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   background: var(--ink);

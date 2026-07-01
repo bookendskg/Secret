@@ -1,3 +1,29 @@
+// Secret-menu intro: show the TOP SECRET stamp for 2s, then the message +
+// unlock button. Clicking the button reveals the page.
+(function () {
+  var intro = document.getElementById("intro");
+  if (!intro) return;
+  var stamp = document.getElementById("intro-stamp");
+  var message = document.getElementById("intro-message");
+  var accessBtn = document.getElementById("access-btn");
+
+  // After 2 seconds, swap the stamp for the message screen.
+  setTimeout(function () {
+    if (stamp) stamp.hidden = true;
+    if (message) message.hidden = false;
+  }, 2000);
+
+  if (accessBtn) {
+    accessBtn.addEventListener("click", function () {
+      intro.classList.add("intro-hide");
+      document.body.classList.remove("intro-lock");
+      setTimeout(function () {
+        if (intro.parentNode) intro.parentNode.removeChild(intro);
+      }, 500);
+    });
+  }
+})();
+
 // Video message loader.
 // Reads settings from the #video section's data-* attributes in index.html and
 // injects a local <video> player and/or a YouTube embed. Both are optional.

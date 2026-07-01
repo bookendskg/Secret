@@ -7,10 +7,32 @@
   <meta name="description" content="Pizza Capiche menu — appetizers, pasta, wood-fired pizza, drinks & desserts." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=Satisfy&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="intro-lock">
+  <!-- ============ SECRET-MENU INTRO ============ -->
+  <div id="intro" class="intro">
+    <!-- Screen 1: TOP SECRET stamp (shown ~2s on load) -->
+    <div class="intro-screen intro-stamp" id="intro-stamp">
+      <div class="stamp">
+        <span class="stamp-title">Top Secret</span>
+        <span class="stamp-sub">Capiche?</span>
+      </div>
+    </div>
+    <!-- Screen 2: personal message + unlock button -->
+    <div class="intro-screen intro-message" id="intro-message" hidden>
+      <div class="message-card">
+        <p class="lead">Just for you.</p>
+        <p>You've been with us, cheered us on, and come back for more — and that means the world to us.</p>
+        <p>This little envelope holds something a bit special. It's not on the menu, not on Instagram, not out in the world. It's just for our people — like you.</p>
+        <p>Keep it close, don't spill the beans, and most of all… enjoy, capiche?</p>
+        <p class="handle">@pizza.capiche</p>
+        <button type="button" id="access-btn" class="access-btn">Access the Secret Menu →</button>
+      </div>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="hero-inner">
       <p class="eyebrow">@pizza.capiche</p>
