@@ -75,7 +75,20 @@ h1, h2, h3, .cat, .price { font-family: "Oswald", "Inter", sans-serif; }
   display: block;
   box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
-.video-local { position: relative; }
+.video-container { justify-items: center; }
+.video-local {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 0;
+}
+/* Local video keeps its natural aspect ratio (portrait or landscape) — no side bars */
+.video-container .video-local video {
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  aspect-ratio: auto;
+}
 .mute-btn {
   position: absolute;
   bottom: 14px;
